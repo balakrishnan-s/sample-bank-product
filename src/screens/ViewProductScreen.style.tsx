@@ -17,11 +17,12 @@ export const styles = StyleSheet.create({
   },
   discountText: { 
     fontSize: 16,
-    color:'red'
+    color:'#C70039',
+    fontWeight: '500' 
   },
   priceText: { 
     fontSize: 34,
-    color:'black',
+    color:'#040D12',
     fontWeight: 'bold'
   },
   ratingView: {
@@ -30,21 +31,32 @@ export const styles = StyleSheet.create({
   ratingTest: {
     marginTop: 5,
     fontSize: 14,
+    fontWeight: '500',
+    color: '#272829'
   },
   category: {
     marginTop: 0,
-    fontSize: 16
+    fontSize: 16,
+    fontWeight: '500',
+    color: '#272829'
   },
   title: {
     marginTop: 0,
     fontSize: 24,
     fontWeight: 'bold',
-    color:'black',
+    color:'#12486B',
   },
   description: {
     marginTop: 8,
     fontSize: 16, 
-    fontWeight: '800' 
+    fontWeight: '500',
+    color: '#352F44'
+  },
+  descriptionDeatils: {
+    marginTop: 8,
+    fontSize: 14, 
+    fontWeight: '500',
+    color: '#3F2E3E'
   },
   wrapper: {
     backgroundColor: '#fff',
@@ -59,12 +71,14 @@ export const styles = StyleSheet.create({
   brand: {
     marginTop: 4,
     fontSize: 20, 
-    fontWeight: 'bold'
+    fontWeight: 'bold',
+    color: '#352F44'
   },
   stock: {
     marginTop: 4,
     fontSize: 16,
-    fontWeight: '600'
+    fontWeight: '600',
+    color: '#7A9D54'
   },
   containerHorizontal: {
     flexGrow: 1,

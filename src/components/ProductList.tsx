@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, FlatList, Image, TouchableOpacity } from 'react-native';
+import { View, Text, FlatList, Image, TouchableWithoutFeedback } from 'react-native';
 import { AirbnbRating } from 'react-native-ratings';
 
 import { styles } from './ProductList.style';
@@ -22,7 +22,7 @@ const ProductsList = ({ products, onClick }) => {
     category,
     thumbnail,
   }: Products) => (
-    <TouchableOpacity onPress={()=>handleItemPress(id)}  >
+    <TouchableWithoutFeedback onPress={()=>handleItemPress(id)}  >
       <View>
         <View style={styles.cardContainer}>
           <View style={styles.imageView}>
@@ -44,7 +44,7 @@ const ProductsList = ({ products, onClick }) => {
                 showRating={false}
               />
             </View>
-            <Text style={styles.price}>${price}</Text>
+            <Text style={styles.price}>${price.toFixed(2)}</Text>
             <Text style={styles.discountPercentage}>(${price + discountPercentage})</Text>
             <Text style={styles.percentage}>({Math.round(((discountPercentage / price) * 100)).toFixed(2)} %)</Text>
             <Text style={styles.brand}>{brand}</Text>
@@ -55,7 +55,7 @@ const ProductsList = ({ products, onClick }) => {
 
         </View>
       </View>
-    </TouchableOpacity>
+    </TouchableWithoutFeedback>
     );
 
   return <FlatList

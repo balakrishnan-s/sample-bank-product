@@ -13,7 +13,8 @@ export const styles = StyleSheet.create({
   cardContainer: {
     flexDirection: 'row',
     justifyContent: 'center',
-    alignItems: 'center'
+    alignItems: 'center',
+    borderBottomWidth: 0.2
   },
   card: {
     //backgroundColor: '#fffff'
@@ -33,11 +34,13 @@ export const styles = StyleSheet.create({
   },
   title: {
     fontSize: 22,
-    fontWeight: 'bold'
+    fontWeight: 'bold',
+    color: '#001C30' 
   },
   body: {
     marginTop: 8,
-    fontSize: 16
+    fontSize: 16,
+    fontWeight: '600' 
   },
   category: {
     marginTop: 0,
@@ -46,21 +49,28 @@ export const styles = StyleSheet.create({
   price: {
     marginTop: 4,
     fontSize: 24,
-    fontWeight: 'bold'
+    fontWeight: 'bold',
+    color: '#001C30' 
   },
   discountPercentage: {
     marginTop: 4,
     fontSize: 16,
     textDecorationLine: 'line-through',
-    textDecorationStyle: 'solid'
+    textDecorationStyle: 'solid',
+    fontWeight: '500',
+    color: '#2B2A4C'  
   },
   stock: {
     marginTop: 4,
-    fontSize: 16
+    fontSize: 16,
+    fontWeight: '500',
+    color: '#2B2A4C'  
   }, 
   percentage: {
     marginTop: 2,
-    fontSize: 12
+    fontSize: 12,
+    fontWeight: '500',
+    color: '#2B2A4C' 
   }, 
   brand: {
     marginTop: 4,

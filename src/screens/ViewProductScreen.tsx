@@ -62,7 +62,6 @@ const ViewProductScreen = ({ route, navigation }) => {
           <View style={{ marginTop: 20 }}>
             <Carousel
               style={styles.wrapper}
-              autoplay
               infinite
             >
               {product?.images.map((img, index) => {
@@ -83,10 +82,10 @@ const ViewProductScreen = ({ route, navigation }) => {
           <Text style={styles.mrpPrice}>M.R.P:${product?.discountPercentage + product?.price}</Text>
           <Text style={styles.brand}>{product?.brand}</Text>
           <Text style={styles.stock}>Stock : {product?.stock}</Text>
-          <Text style={styles.description}>View product details :</Text>
-          <Text style={styles.description}>{product?.description}</Text>
+          <Text style={styles.description}>Product details :</Text>
+          <Text style={styles.descriptionDeatils}>{product?.description}</Text>
           <View>
-            {product?.images.slice(0).reverse().map((img, index) => {
+            {product?.images.slice().reverse().map((img, index) => { 
               return <View
                 style={[styles.datailsImage]}>
                 <Image source={{ uri: img }} key={index} style={styles.dummyImage} />
