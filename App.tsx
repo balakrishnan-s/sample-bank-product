@@ -11,11 +11,12 @@ import AccountScreen from './src/screens/AccountScreen';
 import ProductScreen from './src/screens/ProductScreen';
 import AddProductScreen from './src/screens/AddProductScreen';
 
+import { AppProvider } from './src/context/AppContext';
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
 
 const HomeStack = () => (
-  <Stack.Navigator>
+  <Stack.Navigator screenOptions={{headerShown: false}}>
     <Stack.Screen name="Home" component={HomeScreen} />
     <Stack.Screen name="Product" component={ProductScreen} />
     <Stack.Screen name="AddProduct" component={AddProductScreen} />
@@ -23,32 +24,17 @@ const HomeStack = () => (
 );
 
 const App = () => (
-  <NavigationContainer>
-    <Tab.Navigator screenOptions={({ route }) => ({
-      tabBarIcon: ({ focused, color, size }) => {
-        let iconName;
-
-        if (route.name === "Home") {
-          iconName = focused
-            ? "home-outline"
-            : "home-outline";
-        } else if (route.name === "Search") {
-          iconName = focused ? "search" : "search";
-        } else if (route.name === "Account") {
-          iconName = focused ? "accessibility" : "accessibility";
-        }
-
-        
-        return <Ionicons name={iconName} size={size} color={color} />;
-      },
-      tabBarActiveTintColor: 'blue',
-      tabBarInactiveTintColor: 'gray',
-    })}>
-      <Tab.Screen name="Home" component={HomeStack}/>
-      <Tab.Screen name="Search" component={SearchScreen} />
-      <Tab.Screen name="Account" component={AccountScreen} />
-    </Tab.Navigator>
-  </NavigationContainer>
+  <AntProvider>
+    <AppProvider>
+      <NavigationContainer>
+        <Tab.Navigator>
+          <Tab.Screen name="Home" component={HomeStack} />
+          <Tab.Screen name="Search" component={SearchScreen} />
+          <Tab.Screen name="Account" component={AccountScreen} />
+        </Tab.Navigator>
+      </NavigationContainer>
+    </AppProvider>
+  </AntProvider>
 );
 
 export default App;
