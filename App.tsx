@@ -10,16 +10,18 @@ import SearchScreen from './src/screens/SearchScreen';
 import AccountScreen from './src/screens/AccountScreen';
 import ProductScreen from './src/screens/ProductScreen';
 import AddProductScreen from './src/screens/AddProductScreen';
+import ViewProductScreen from './src/screens/ViewProductScreen';
 
 import { AppProvider } from './src/context/AppContext';
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
 
 const HomeStack = () => (
-  <Stack.Navigator screenOptions={{headerShown: false}}>
+  <Stack.Navigator screenOptions={{ headerShown: false }}>
     <Stack.Screen name="Home" component={HomeScreen} />
     <Stack.Screen name="Product" component={ProductScreen} />
     <Stack.Screen name="AddProduct" component={AddProductScreen} />
+    <Stack.Screen name="ViewProductScreen" component={ViewProductScreen} />
   </Stack.Navigator>
 );
 
