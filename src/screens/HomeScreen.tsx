@@ -12,11 +12,10 @@ const HomeScreen = ({ navigation }) => {
   const [products, setProducts] = useState<Products[]>();
 
   useFocusEffect(
-    React.useCallback(() => {
-      console.log("Focus");
+    React.useCallback(() => { 
       const getuser = async () => {
         const response = await axios.get(`https://dummyjson.com/products`);
-        Alert.alert('Alert Title', JSON.stringify(response?.data?.products));
+        //Alert.alert('Alert Title', JSON.stringify(response?.data?.products));
         setProducts(response?.data?.products);
       };
       getuser();
