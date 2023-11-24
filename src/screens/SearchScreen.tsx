@@ -27,7 +27,7 @@ const SearchScreen = ({ navigation }) => {
 
 
   return (
-    <SafeAreaView>
+    <SafeAreaView style={styles.container}>
       <TextInput
         style={styles.input}
         onChangeText={onChangeText}

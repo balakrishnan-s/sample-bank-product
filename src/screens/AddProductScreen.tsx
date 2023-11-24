@@ -1,28 +1,28 @@
 
 import React, { useState } from 'react';
-import { Text, SafeAreaView, TextInput, Button, ScrollView, View } from 'react-native';
+import { Alert, Text, SafeAreaView, TextInput, Button, ScrollView, View } from 'react-native';
 import axios from 'axios';
 
 import { serverURL } from '../const/confg';
 import { Products } from '../model/Products';
 import { styles } from './AddProductScreen.style';
-import ProductList from '../components/ProductList';
 
 const AddProductScreen = ({ navigation }) => {
 
-  const [text, onChangeText] = React.useState('');
-  const [description, onChangeDescription] = React.useState('');
-  const [price, onChangePrice] = React.useState(0);
-  const [discountPercentage, onChangeDiscountPercentage] = React.useState(0);
-  const [stock, onChangeStock] = React.useState(0);
-  const [brand, onChangeBrand] = React.useState('');
-  const [category, onChangeCategory] = React.useState('');
-  const [thumbnail, onChangeThumbnail] = React.useState('');
-  const [image1, onChangeImage1] = React.useState('');
-  const [image2, onChangeImage2] = React.useState('');
-  const [image3, onChangeImage3] = React.useState('');
-  const [image4, onChangeImage4] = React.useState('');
-  const [image5, onChangeImage5] = React.useState('');
+  const [title, onChangeTitle] = useState('');
+  const [description, onChangeDescription] = useState('');
+  const [price, onChangePrice] = useState(0);
+  const [discountPercentage, onChangeDiscountPercentage] = useState(0);
+  const [rating, onChangeRating] = useState(0);
+  const [stock, onChangeStock] = useState(0);
+  const [brand, onChangeBrand] = useState('');
+  const [category, onChangeCategory] = useState('');
+  const [thumbnail, onChangeThumbnail] = useState('');
+  const [image1, onChangeImage1] = useState('');
+  const [image2, onChangeImage2] = useState('');
+  const [image3, onChangeImage3] = useState('');
+  const [image4, onChangeImage4] = useState('');
+  const [image5, onChangeImage5] = useState('');
 
 
 
@@ -35,12 +35,44 @@ const AddProductScreen = ({ navigation }) => {
     getProduct();
   };
 
-  const viewProduct = (id) => { 
-    navigation.navigate('ViewProductScreen', {
-      id: id
-    });
+  const addProducts = () => {
+    const addProduct = async () => {
+      const params = {
+        title: title,
+        description: description,
+        price: price,
+        discountPercentage: discountPercentage,
+        rating: rating,
+        stock: stock,
+        brand: brand,
+        category: category,
+        thumbnail: thumbnail,
+        images: [...image1, ...image2, ...image3, ...image4, ...image5],
+      };
+      const response = await axios.post('https://dummyjson.com/products/add', params)
+        .then(function (response) {
+          console.log(response);
+          Alert.alert(
+            'Product Add',
+            'Product added successfully',
+            [
+              { text: 'Cancel', onPress: () => console.log('Cancel Pressed!') },
+              { text: 'OK', onPress: navigateToHome },
+            ],
+            { cancelable: false }
+          );
+
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
+    };
+    addProduct();
   };
 
+  const navigateToHome = () => {
+    navigation.navigate('Home');
+  };
 
   return (
     <SafeAreaView style={styles.container}>
@@ -53,8 +85,8 @@ const AddProductScreen = ({ navigation }) => {
           <Text style={styles.lable}>Title* :</Text>
           <TextInput
             style={styles.input}
-            onChangeText={onChangeText}
-            value={text}
+            onChangeText={onChangeTitle}
+            value={title}
           />
           <Text style={styles.lable}>Description* :</Text>
           <TextInput
@@ -143,7 +175,7 @@ const AddProductScreen = ({ navigation }) => {
             value={image5}
           />
 
-          <Button title="Add Product" onPress={searchProduct} />
+          <Button title="Add Product" onPress={addProducts} />
         </View>
       </ScrollView>
     </SafeAreaView>

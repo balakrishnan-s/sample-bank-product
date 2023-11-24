@@ -32,7 +32,7 @@ const HomeScreen = ({ navigation }) => {
 
   return (
     <View style={styles.container}>
-      {/* <Button title="Add Product" onPress={navigateToAddProduct} /> */}
+      <Button title="Add Product" onPress={navigateToAddProduct} />
       {products &&
         <ProductList
           products={products}

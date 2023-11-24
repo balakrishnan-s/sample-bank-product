@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import { 
+import {
   Text,
-  View, 
-  TextInput, 
+  View,
+  TextInput,
   TouchableOpacity,
-  Alert, 
+  Image,
 } from "react-native";
 import { styles } from './LoginScreen.style';
 import axios from 'axios';
@@ -15,26 +15,26 @@ const LoginScreen = ({ navigation }) => {
   const [password, setPassword] = useState("0lelplR");
   const [diableLogin, setDiableLogin] = useState(false);
 
-  const login = () => { 
+  const login = () => {
     setDiableLogin(true);
     const loginUser = async () => {
       const response = await axios.post('https://dummyjson.com/auth/login', {
         username: userName,
         password: password
       })
-        .then(function (response) { 
+        .then(function (response) {
           try {
-             AsyncStorage.setItem('my-key',JSON.stringify( response));
-          } catch (error) { 
+            AsyncStorage.setItem('my-key', JSON.stringify(response));
+          } catch (error) {
             console.log(error);
-          } 
-          setDiableLogin(false); 
+          }
+          setDiableLogin(false);
           navigateToHome();
         })
-        .catch(function (error) { 
+        .catch(function (error) {
           console.log(error);
           setDiableLogin(false);
-        }); 
+        });
     };
     loginUser();
   };
@@ -43,7 +43,11 @@ const LoginScreen = ({ navigation }) => {
     navigation.navigate('Home');
   };
   return (
-    <View style={styles.container}> 
+    <View style={styles.container}>
+      <View style={styles.imageView}><Image
+        source={{ uri: 'https://cdn.dribbble.com/users/1889528/screenshots/7239609/0aba6579301149.5cbf290c5a8dd.jpg' }}
+        style={styles.image}
+      /></View>
       <View style={styles.inputView}>
         <TextInput
           style={styles.TextInput}
@@ -63,9 +67,9 @@ const LoginScreen = ({ navigation }) => {
           value={password}
         />
       </View>
-       
+
       <TouchableOpacity style={styles.loginBtn}>
-        <Text onPress={login} disabled={diableLogin}>LOGIN</Text>
+        <Text  style={styles.loginText} onPress={login} disabled={diableLogin}>LOGIN</Text>
       </TouchableOpacity>
     </View>
   );

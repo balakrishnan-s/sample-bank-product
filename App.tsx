@@ -27,7 +27,13 @@ const HomeStack = () => (
 const Home = () => {
   return (
     <Tab.Navigator>
-      <Tab.Screen name="Home" component={HomeStack} />
+      <Tab.Screen name="Home" component={HomeStack} 
+      options={{
+        tabBarLabel: 'Home',
+        tabBarIcon: ({ color, size }) => (
+          <Ionicons name="home" color={color} size={size} />
+        ),
+      }} />
       <Tab.Screen name="Search" component={SearchScreen} />
       <Tab.Screen name="Account" component={AccountScreen} />
     </Tab.Navigator>
@@ -42,7 +48,7 @@ const App = () => (
           <Stack.Screen
             name="Home"
             component={Home}
-            options={{ headerShown: false,  }}
+            options={{ headerShown: false, }}
           />
 
         </Stack.Navigator>

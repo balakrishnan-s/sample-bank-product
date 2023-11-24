@@ -2,39 +2,31 @@ import { StyleSheet } from 'react-native';
 
 export const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
+    padding : 16
   },
-  image: {
-    marginBottom: 40,
+  input: {
+    height: 40,
+    marginBottom: 10, 
+    marginTop: 2,
+    padding: 2,  
+    borderBottomWidth : 1,
+    borderColor: 'gray'
   },
-  inputView: {
-    backgroundColor: "#d0d0d0",
-    borderRadius: 30,
-    width: "70%",
-    height: 45,
-    marginBottom: 20,
-    alignItems: "flex-start",
+  lable: {
+    marginTop: 8,
+    fontSize: 16, 
+    fontWeight: '500',
+    color: '#352F44'
   },
-  TextInput: {
-    height: 50,
-    flex: 1,
-    padding: 10,
-    marginLeft: 20,
-  },
-  forgot_button: {
-    height: 30,
-    marginBottom: 30,
-  },
-  loginBtn: {
-    width: "80%",
-    borderRadius: 25,
-    height: 50,
-    alignItems: "center",
-    justifyContent: "center",
-    marginTop: 40,
-    backgroundColor: "#00aba9",
+  description: {
+    height: 100,
+    marginBottom: 10, 
+    textAlign: 'left',
+    justifyContent: "flex-start",
+    alignContent: 'flex-start',
+    marginTop: 2,
+    padding: 2,  
+    borderBottomWidth : 1,
+    borderColor: 'gray'
   },
 });
