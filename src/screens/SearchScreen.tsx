@@ -19,8 +19,7 @@ const SearchScreen = ({ navigation }) => {
     getProduct();
   };
 
-  const viewProduct = (id) => {
-    //Alert.alert('Search Title', "id : "+JSON.stringify(id));
+  const viewProduct = (id) => { 
     navigation.navigate('ViewProductScreen', {
       id: id
     });

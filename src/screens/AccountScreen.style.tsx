@@ -4,11 +4,18 @@ export const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#fff",
+    padding: 16
+  },
+  imageContainer: {
     alignItems: "center",
     justifyContent: "center",
   },
   image: {
     marginBottom: 40,
+    width: 150,
+    height: 150,
+    borderRadius: 150 / 2,
+    backgroundColor: "#d0d0d0"
   },
   inputView: {
     backgroundColor: "#d0d0d0",
@@ -36,5 +43,31 @@ export const styles = StyleSheet.create({
     justifyContent: "center",
     marginTop: 40,
     backgroundColor: "#00aba9",
+  },
+  userName: {
+    marginTop: 0,
+    fontSize: 30,
+    fontWeight: 'bold',
+    color: '#ab2c2c',
+  },
+  row: {
+    flexDirection: 'row',
+    marginTop:10
+  },
+  colunm: {
+    flex: 1,  
+  },
+  colunm2: {
+    flex: 2,  
+  },
+  labelText: { 
+    fontSize: 24,
+    fontWeight: '500', 
+    color: '#000000',
+  },
+  valueText: { 
+    fontSize: 24,
+    fontWeight: 'bold', 
+    color: '#12486B',
   },
 });

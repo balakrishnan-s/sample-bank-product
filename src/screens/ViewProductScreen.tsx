@@ -7,23 +7,18 @@ import { AirbnbRating } from 'react-native-ratings';
 import { Products } from '../model/Products';
 import { styles } from './ViewProductScreen.style';
 
-const ViewProductScreen = ({ route, navigation }) => {
-  // const [data, setData] = useState<any[]>([]); 
+const ViewProductScreen = ({ route, navigation }) => { 
   const [product, setProduct] = useState<Products>();
   useEffect(() => {
-    const data = route.params?.id;
-    // Alert.alert('Alert Title', "id : " + JSON.stringify(data));
+    const data = route.params?.id; 
     if (data) {
       setProduct(data);
-      const getProduct = async () => {
-        //Alert.alert('Alert Title ID', "id : " + JSON.stringify(data.id));
+      const getProduct = async () => { 
         const response = await axios.get(`https://dummyjson.com/products/` + data?.id);
-        setProduct(response?.data);
-        //Alert.alert('Alert Title Data', "id : " + JSON.stringify(response?.data));
+        setProduct(response?.data); 
       };
       getProduct();
-    }
-
+    } 
   }, []);
 
   return (

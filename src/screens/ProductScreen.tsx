@@ -3,8 +3,7 @@ import { View, Text } from 'react-native';
 
 const ProductScreen = () => (
   <View>
-    <Text>Product Screen</Text>
-    {/* Display product information */}
+    <Text>Product Screen</Text> 
   </View>
 );
 
