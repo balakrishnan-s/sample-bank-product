@@ -1,10 +1,10 @@
 
 import React, { useState } from 'react';
-import { Alert, Text, SafeAreaView, TextInput, Button, ScrollView, View } from 'react-native';
+import { Alert, Text, SafeAreaView, TextInput, Button, ScrollView, View, Form } from 'react-native';
 import axios from 'axios';
 
 import { serverURL } from '../const/confg';
-import { Products } from '../model/Products';
+import Products from '../model/Products';
 import { styles } from './AddProductScreen.style';
 
 const AddProductScreen = ({ navigation }) => {
@@ -24,20 +24,10 @@ const AddProductScreen = ({ navigation }) => {
   const [image4, onChangeImage4] = useState('');
   const [image5, onChangeImage5] = useState('');
 
-
-
-
-  const searchProduct = () => {
-    const getProduct = async () => {
-      const response = await axios.get(`https://dummyjson.com/products/search?q=` + text);
-      //setProducts(response?.data?.products);
-    };
-    getProduct();
-  };
-
   const addProducts = () => {
     const addProduct = async () => {
-      const params = {
+      const params: Products = {
+        id: 0,
         title: title,
         description: description,
         price: price,

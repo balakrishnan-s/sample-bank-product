@@ -3,7 +3,7 @@ import { View, Button, Alert } from 'react-native';
 import axios from 'axios';
 import { useFocusEffect } from '@react-navigation/native';
  
-import { Products } from '../model/Products';
+import Products from '../model/Products';
 import { styles } from './HomeScreen.style';
 import ProductList from '../components/ProductList';
 

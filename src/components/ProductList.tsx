@@ -3,7 +3,7 @@ import { View, Text, FlatList, Image, TouchableWithoutFeedback } from 'react-nat
 import { AirbnbRating } from 'react-native-ratings';
 
 import { styles } from './ProductList.style';
-import { Products } from '../model/Products'; 
+import Products from '../model/Products'; 
 
 const ProductsList = ({ products, onClick }) => {
   const handleItemPress = (id) => {

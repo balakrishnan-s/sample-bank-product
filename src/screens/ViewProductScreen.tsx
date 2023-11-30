@@ -4,7 +4,7 @@ import { Button, Flex, WhiteSpace, WingBlank, Carousel } from '@ant-design/react
 import axios from 'axios';
 import { AirbnbRating } from 'react-native-ratings';
 
-import { Products } from '../model/Products';
+import Products from '../model/Products';
 import { styles } from './ViewProductScreen.style';
 
 const ViewProductScreen = ({ route, navigation }) => { 

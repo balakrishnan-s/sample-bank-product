@@ -7,7 +7,7 @@ import {
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 import { styles } from './AccountScreen.style';
-import { User } from '../model/User';
+import User from '../model/User';
 const AccountScreen = ({ route, navigation }) => { 
   const [user, setUser] = useState<User>();
 

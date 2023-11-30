@@ -3,7 +3,7 @@ import { Alert, SafeAreaView, TextInput, Button } from 'react-native';
 import axios from 'axios';
 
 import { serverURL } from '../const/confg';
-import { Products } from '../model/Products';
+import Products from '../model/Products';
 import { styles } from './SearchScreen.style';
 import ProductList from '../components/ProductList';
 
